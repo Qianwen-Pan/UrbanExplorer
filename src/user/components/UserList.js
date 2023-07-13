@@ -3,22 +3,21 @@ import UserListItem from "./UserListItem";
 function UserList(props) {
   if (props.items.length === 0) {
     return (
-      <div>
+      <div className="center">
         <h2>User Not Found.</h2>
       </div>
     );
   }
   return (
-    <ul>
+    <ul className="user-list">
       {props.items.map((user) => (
-        <li>
-          <UserListItem
-            key={user.id}
-            id={user.id}
-            image={user.image}
-            placesCount={user.places}
-          />
-        </li>
+        <UserListItem
+          key={user.id}
+          id={user.id}
+          image={user.image}
+          name={user.name}
+          placesCount={user.places}
+        />
       ))}
     </ul>
   );

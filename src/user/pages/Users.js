@@ -12,7 +12,7 @@ function Users() {
             id: "u2",
             name: "momo",
             image: "https://i.pinimg.com/564x/95/18/ae/9518ae7cee282a7693b7387419febaed.jpg",
-            places:3
+            places:1
         }
     ]
     return (
