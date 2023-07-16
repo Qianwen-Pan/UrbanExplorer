@@ -1,8 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import PlaceList from "../components/PlaceList";
 
-function UserPlaces() {
-  const items = [
+const items = [
     {
       id: "p1",
       imgUrl:
@@ -34,6 +34,10 @@ function UserPlaces() {
       creator: "u2",
     },
   ];
-  return <PlaceList items={items} />;
+
+function UserPlaces() {
+  const userId = useParams().userId;
+  const loadPlaces = items.filter(place => place.creator === userId);
+  return <PlaceList items={loadPlaces} />;
 }
 export default UserPlaces;
