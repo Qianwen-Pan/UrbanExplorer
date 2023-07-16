@@ -1,9 +1,10 @@
 import React from "react";
 import PlaceItem from "./PlaceItem";
+import "./PlaceList.css";
 
 function PlaceList(props){
     return (
-        <ul>
+        <ul className="place-list">
             {props.items.map(place => <PlaceItem 
             key={place.id}
             id={place.id}
