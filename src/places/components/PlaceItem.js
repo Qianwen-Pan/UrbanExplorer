@@ -21,7 +21,7 @@ function PlaceItem(props) {
         footer={<Button onClick={closeModalHandler}>CLOSE</Button>}
       >
         <div className="map_container">
-          <Map />
+          <Map location={props.location} zoom={12} />
         </div>
         
       </Modal>
