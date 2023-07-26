@@ -18,14 +18,14 @@ function Map(props) {
       const map = new Map(mapRef.current, {
         zoom: zoom,
         center: location,
-        mapId: "DEMO_MAP_ID",
+    
       });
 
       // The marker, positioned at Uluru
       const marker = new AdvancedMarkerView({
         map: map,
         position: location,
-        title: "Uluru",
+    
       });
     };
 
