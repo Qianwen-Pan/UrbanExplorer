@@ -1,7 +1,12 @@
 import React from "react";
-
+import Input from "../../shared/components/Form/Input";
 function NewPlaces() {
-    return <h1>new places</h1>
+    return (
+        <form>
+            <Input />
+            
+        </form>
+    );
 }
 
 export default NewPlaces;
