@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./Input.css";
 function Input(props) {
   const element =
     props.element === "input" ? (
@@ -8,7 +8,7 @@ function Input(props) {
       <textarea id={props.id} rows={props.rows || 3} />
     );
   return (
-    <div>
+    <div className={`form-control`}>
       <label>{props.label}</label>
       {element}
     </div>
