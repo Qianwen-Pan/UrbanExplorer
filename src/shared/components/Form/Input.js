@@ -7,7 +7,7 @@ const inputReducer = (state, action) => {
       return {
         ...state,
         value: action.val,
-        isValid: false,
+        isValid: true,
       };
     default:
       return state;
@@ -15,25 +15,32 @@ const inputReducer = (state, action) => {
 };
 function Input(props) {
   const initialState = { value: "", isValid: false };
-  const [state, dispatch] = useReducer(inputReducer, initialState);
-    const changeHandler = (event) => {
-
-    }
+  const [inputState, dispatch] = useReducer(inputReducer, initialState);
+  const changeHandler = (event) => {
+    dispatch({ type: "CHANGE", val: event.target.value });
+  };
   const element =
     props.element === "input" ? (
       <input
         type="text"
         id={props.id}
         placeholder={props.placeholder}
-        onChange={(event) => dispatch({type: "CHANGE", val: event.target.value})}
+        onChange={changeHandler}
+        value={inputState.value}
       />
     ) : (
-      <textarea id={props.id} rows={props.rows || 3} />
+      <textarea
+        id={props.id}
+        rows={props.rows || 3}
+        onChange={changeHandler}
+        value={inputState.value}
+      />
     );
   return (
-    <div className={`form-control`}>
+    <div className={`form-control ${!inputState.isValid && "form-control--invalid"}`}>
       <label>{props.label}</label>
       {element}
+      {!inputState.isValid && <p>{props.errorText}</p>}
     </div>
   );
 }
