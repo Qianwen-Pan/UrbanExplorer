@@ -14,7 +14,7 @@ const items = [
       address: "228 Rue de l'Université, 75007 Paris, France, Paris",
       location: {
         lat: 48.8598459,
-        long: 2.2937657,
+        lng: 2.2937657,
       },
       creator: "u1",
     },
